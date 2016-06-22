@@ -32,6 +32,9 @@
 <dom-module id="bloombox-apothecary">
   <template>
     <style is="custom-style" include="bloombox-styles">
+      :host {
+        display: block;
+      }
     </style>
 
     <template is="dom-if" if="[[!zerostate]]">
@@ -97,7 +100,7 @@
       <paper-card header="Apothecary" class="product-card apothecary-product zerostate fullwidth">
         <div class="card-content">
           <div class="basic-info row">
-            <!-- Apothecary Name & Description -->
+            <!-- Name & Description -->
             <paper-input id="brandField" placeholder="Brand Name" value="{{brand}}" required no-label-float name="brand" class="form-item apothecary-brand"></paper-input>
             <paper-input id="nameField" placeholder="Product Name" value="{{name}}" required no-label-float name="name" class="form-item apothecary-name"></paper-input>
             <paper-textarea id="descriptionField" label="Description" value="{{description}}" no-label-float name="description" class="form-item apothecary-description"></paper-textarea>
@@ -140,18 +143,6 @@
             <div class="bogo-toggle-option">
               <paper-checkbox id="bogoToggle" checked="{{bogo}}" class="form-item item-bogo-toggle" noink>Buy One, Get One</paper-checkbox>
             </div><!-- end .bogo-toggle-option -->
-
-            <div class="organic-toggle-option">
-              <paper-checkbox id="organicToggle" checked="{{organic}}" class="form-item item-organic-toggle" noink>Organic</paper-checkbox>
-            </div><!-- end .organic-toggle-option -->
-
-            <div class="vegan-toggle-option">
-              <paper-checkbox id="veganToggle" checked="{{vegan}}" class="form-item item-vegan-toggle" noink>Vegan</paper-checkbox>
-            </div><!-- end .vegan-toggle-option -->
-
-            <div class="glutenfree-toggle-option">
-              <paper-checkbox id="glutenfreeToggle" checked="{{glutenfree}}" class="form-item item-glutenfree-toggle" noink>Gluten Free</paper-checkbox>
-            </div><!-- end .glutenfree-toggle-option -->
           </div><!-- end .row.stock-flags -->
 
           <!-- Test Results -->
