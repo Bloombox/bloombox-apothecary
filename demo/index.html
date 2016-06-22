@@ -12,15 +12,59 @@
     <link rel="import" href="../bloombox-apothecary.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container.centered {
+        max-width: 700px !important;
+      }
     </style>
   </head>
   <body>
-
     <div class="vertical-section-container centered">
-      <h3>Basic bloombox-apothecary Demo</h3>
+      <h3>Zerostate Example</h3>
       <demo-snippet>
         <template>
-          <bloombox-apothecary></bloombox-apothecary>
+          <bloombox-apothecary zerostate></bloombox-apothecary>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Data Example (normal display mode)</h3>
+      <demo-snippet>
+        <template>
+          <bloombox-apothecary
+            key="sample1"
+            display-mode="normal"
+            name="Extra-strength CBD Capsule"
+            photos='["test.jpg"]'
+            description="This awesome capsule fixes everything in your body instantly"
+            tests='{"cbd":60,"thc":15}'
+            pricing='{"unit": {"available": true, "value": 5}}'
+            sale="20"
+            bogo="true"
+            visible="true"
+            premium="true"
+            partner="mm"></bloombox-apothecary>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Data Example (slim display mode)</h3>
+      <demo-snippet>
+        <template>
+          <bloombox-apothecary
+            key="sample1"
+            display-mode="slim"
+            name="Extra-strength CBD Capsule"
+            photos='["test.jpg"]'
+            description="This awesome capsule fixes everything in your body instantly"
+            tests='{"cbd":60,"thc":15}'
+            pricing='{"unit": {"available": true, "value": 5}}'
+            sale="20"
+            bogo="true"
+            visible="true"
+            premium="true"
+            partner="mm"></bloombox-apothecary>
         </template>
       </demo-snippet>
     </div>
