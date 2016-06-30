@@ -216,7 +216,7 @@
   <script>
     Polymer.BloomboxApothecary = Polymer({
       is: 'bloombox-apothecary',
-      behaviors: [Polymer.BloomboxUnitPricingProductCardBehavior],
+      behaviors: [Polymer.BloomboxBaseProductCardBehavior, Polymer.BloomboxUnitPricingProductCardBehavior],
 
       /**
        * Persistence schema and storage collection for this item.
