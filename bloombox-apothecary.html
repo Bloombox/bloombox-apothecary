@@ -73,30 +73,32 @@
       <div class="product-card apothecary-card">
         <div class="card-content">
           <div class="name-row">
-            <h2>[[name]]</h2> 
+            <h2>[[brand]]: [[name]]</h2>
 
-          <!-- Stock Flags -->
-          <div class="stock-flags apothecary-info test-info row">
-            <div class="base-flags">
-              <!-- MPMH -->
-              <iron-label class="premium-label" hidden$="[[!premium]]"><span>[[_renderPremiumLabel(partner)]]</span></iron-label>
+            <!-- Stock Flags -->
+            <div class="stock-flags apothecary-info test-info row">
+              <div class="base-flags">
+                <!-- MPMH -->
+                <iron-label class="premium-label" hidden$="[[!premium]]"><span>[[_renderPremiumLabel(partner)]]</span></iron-label>
 
-              <!-- Sale -->
-              <iron-label class="sale-label" hidden$="[[!sale]]"><span>[[sale]]% OFF</span></iron-label>
+                <!-- Sale -->
+                <iron-label class="sale-label" hidden$="[[!sale]]"><span>[[sale]]% OFF</span></iron-label>
 
-              <!-- Buy-One-Get-One -->
-              <iron-label class="bogo-label" hidden$="[[!bogo]]"><span>Buy One Get One</span></iron-label>
+                <!-- Buy-One-Get-One -->
+                <iron-label class="bogo-label" hidden$="[[!bogo]]"><span>Buy One Get One</span></iron-label>
 
-              <!-- Type -->
-              <iron-label class="type-label"><span>[[type]]</span></iron-label>
+                <!-- Type -->
+                <iron-label class="type-label"><span>[[type]]</span></iron-label>
 
-              <!-- Test Results -->
-              <bloombox-testing
-                mode="basic"
-                thc="[[tests.thc]]"
-                cbd="[[tests.cbd]]"></bloombox-testing>
+                <!-- Test Results -->
+                <bloombox-testing
+                  mode="basic"
+                  rating-mode="mg"
+                  thc="[[tests.thc]]"
+                  cbd="[[tests.cbd]]"></bloombox-testing>
+              </div><!-- end div.row.stock-flags -->
             </div><!-- end div.row.stock-flags -->
-          </div><!-- end div.row.stock-flags -->
+          </div><!-- end div.name-row -->
 
           <!-- Description -->
           <div class="row description-container">
@@ -107,7 +109,6 @@
           <div class="product-media apothecary-media row">
             <div class="bloombox-media-wrap">
               <bloombox-media
-                hidden$="[[_shouldHideImage()]]"
                 disabled
                 partner="[[partner]]"
                 environment="[[environment]]"
@@ -381,13 +382,6 @@
         if (this.$$("#premiumToggle").checked) {
           payload.flags = payload.flags || {};
           payload.flags.premium = true;
-        }
-        if (this.$$("#showToggle").checked) {
-          payload.flags = payload.flags || {};
-          payload.flags.visible = true;
-        } else {
-          payload.flags = payload.flags || {};
-          payload.flags.visible = false;
         }
         if (this.$$("#bogoToggle").checked) {
           payload.flags = payload.flags || {};
