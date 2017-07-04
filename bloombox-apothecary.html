@@ -90,8 +90,10 @@
                 <!-- Last Chance -->
                 <iron-label class="lastchance-label" hidden$="[[!lastchance]]"><span>Last Chance</span></iron-label>
 
-                <!-- Type -->
-                <iron-label class="type-label"><span>[[type]]</span></iron-label>
+                <!-- Type Label -->
+                <template is="dom-if" if="[[type]]">
+                  <iron-label class="type-label"><span>[[_renderTypeLabel(type)]]</span></iron-label>
+                </template>
 
                 <!-- Test Results -->
                 <bloombox-testing
@@ -309,6 +311,15 @@
             return {"unit": {"available": true, "value": 0}};
           }
         }
+      },
+
+      /**
+       * Render a human-readable label for a `type`.
+       */
+      _renderTypeLabel: function(type) {
+        if (typeof type === "string")
+          return type;
+        return "Unspecified Type";
       },
 
       /**
